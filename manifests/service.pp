@@ -8,5 +8,4 @@ class sysctl::service inherits sysctl::params {
       refreshonly => true,
     }
   }
-
 }
