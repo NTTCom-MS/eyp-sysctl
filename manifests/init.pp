@@ -20,7 +20,7 @@ class sysctl(
   }
 
   class { 'sysctl::service':
-    manage_docker_service=$manage_docker_service,
+    manage_docker_service => $manage_docker_service,
   }
 
 }
