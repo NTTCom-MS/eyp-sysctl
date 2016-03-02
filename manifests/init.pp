@@ -1,6 +1,7 @@
 # == Class: sysctl
 #
 class sysctl(
+              $manage_docker_service=false,
             ) inherits sysctl::params {
 
   Exec{
@@ -14,14 +15,12 @@ class sysctl(
     group   => 'root',
     mode    => '0644',
     content => template("${module_name}/sysctlbase.erb"),
-    notify  => Exec['apply sysctl'],
+    notify  => Class['sysctl::service'],
     audit   => 'content',
   }
 
-  exec {'apply sysctl':
-    command     => $sysctl::params::sysctlreload,
-    require     => File['sysctl-base'],
-    refreshonly => true,
+  class { 'sysctl::service':
+    manage_docker_service=$manage_docker_service,
   }
 
 }
