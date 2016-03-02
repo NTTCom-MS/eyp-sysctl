@@ -1,6 +1,7 @@
 # == Class: sysctl
 #
 class sysctl(
+              $manage_docker_service=false,
             ) inherits sysctl::params {
 
   Exec{
@@ -19,6 +20,7 @@ class sysctl(
   }
 
   class { 'sysctl::service':
+    manage_docker_service=$manage_docker_service,
   }
 
 }

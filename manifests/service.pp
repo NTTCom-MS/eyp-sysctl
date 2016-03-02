@@ -1,4 +1,4 @@
-class sysctl::service inherits sysctl::params {
+class sysctl::service($manage_docker_service=false,) inherits sysctl::params {
 
   if(getvar('::eyp_docker_iscontainer')==undef or
       getvar('::eyp_docker_iscontainer')==false or
