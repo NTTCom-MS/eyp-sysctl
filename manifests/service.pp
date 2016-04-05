@@ -11,7 +11,7 @@ class sysctl::service($manage_docker_service=false,) inherits sysctl::params {
   {
     exec {'apply sysctl':
       command     => $sysctl::params::sysctlreload,
-      require     => File['sysctl-base'],
+      require     => Concat['/etc/sysctl.conf'],
       refreshonly => true,
     }
   }

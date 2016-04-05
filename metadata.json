@@ -1,6 +1,6 @@
 {
   "name": "eyp-sysctl",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "author": "eyp",
   "summary": "deploys a bucketed config for sysctl",
   "license": "Apache-2.0",
@@ -8,7 +8,8 @@
   "project_page": null,
   "issues_url": null,
   "dependencies": [
-    {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0"}
+    {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0"},
+    {"name":"puppetlabs/concat","version_requirement":">= 1.2.3"}
   ],
   "operatingsystem_support": [
     {
