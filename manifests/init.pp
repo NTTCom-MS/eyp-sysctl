@@ -27,12 +27,6 @@ class sysctl(
     order   => '00',
   }
 
-  concat::fragment{ "sysctl ${setting}":
-    target  => '/etc/sysctl.conf',
-    content => "\n\n# custom settings\n\n",
-    order   => '98',
-  }
-
   class { 'sysctl::service':
     manage_docker_service => $manage_docker_service,
   }
