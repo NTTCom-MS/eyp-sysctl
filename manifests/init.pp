@@ -14,11 +14,11 @@ class sysctl(
   }
 
   concat { '/etc/sysctl.conf':
-    ensure  => 'present',
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
-    notify  => Class['sysctl::service'],
+    ensure => 'present',
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0644',
+    notify => Class['sysctl::service'],
   }
 
   concat::fragment{ 'base sysctl':
