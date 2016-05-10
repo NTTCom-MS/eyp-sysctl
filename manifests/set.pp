@@ -15,4 +15,9 @@ define sysctl::set($value, $setting=$name) {
     order   => '99',
   }
 
+  #per actualitzar en calent via exec
+  # root@preedit1:~# sysctl vm.swappiness
+  # vm.swappiness = 0
+
+
 }
