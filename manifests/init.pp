@@ -6,7 +6,8 @@
 # 99: custom settings
 #
 class sysctl(
-              $manage_docker_service=false,
+              $manage_service        = true,
+              $manage_docker_service = false,
             ) inherits sysctl::params {
 
   Exec{
@@ -28,6 +29,7 @@ class sysctl(
   }
 
   class { 'sysctl::service':
+    manage_service        => $manage_service,
     manage_docker_service => $manage_docker_service,
   }
 
