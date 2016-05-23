@@ -18,7 +18,7 @@ describe 'sysctl class' do
       expect(apply_manifest(pp).exit_code).to eq(0)
     end
 
-    describe file($sysstatconf) do
+    describe file('/etc/sysctl.conf') do
       it { should be_file }
       its(:content) { should match 'puppet managed file' }
     end
