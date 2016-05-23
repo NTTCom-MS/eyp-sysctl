@@ -1,7 +1,7 @@
 define sysctl::set(
                     $value,
-                    $setting=$name,
-                    $permanent=true,
+                    $setting   = $name,
+                    $permanent = true,
                   ) {
 
   Exec{
