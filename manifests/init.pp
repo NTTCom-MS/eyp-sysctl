@@ -8,6 +8,7 @@
 class sysctl(
               $manage_service        = true,
               $manage_docker_service = false,
+              $disable_ipv6          = true,
             ) inherits sysctl::params {
 
   Exec{
