@@ -114,7 +114,7 @@ sysctl::set { 'kernel.sem':
 
 * **setting**: (default: name)
 * **value**:
-* **permanent**: (default: true)
+* **permanent**: if true, is added to /etc/sysctl.conf, otherwise it's set using sysctl -w (default: true)
 
 ## Limitations
 
