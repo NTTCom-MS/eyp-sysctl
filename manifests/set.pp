@@ -8,6 +8,8 @@ define sysctl::set(
     path => '/usr/sbin:/usr/bin:/sbin:/bin',
   }
 
+  include ::sysctl
+
   if($permanent)
   {
     if(!defined(Concat::Fragment['sysctl settings banner']))
@@ -35,7 +37,7 @@ define sysctl::set(
 
   exec { "update sysctl ${setting} ${value}":
     command => "sysctl -w '${setting}=${value}'",
-    unless  => "sysctl -n ${setting} | grep ${value}",
+    unless  => "sysctl -n ${setting} | grep -P \"${value}\"",
     require => Concat['/etc/sysctl.conf'],
   }
 
