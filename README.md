@@ -17,43 +17,33 @@
 
 ## Overview
 
-A one-maybe-two sentence summary of what the module does/what problem it solves.
-This is your 30 second elevator pitch for your module. Consider including
-OS/Puppet version it works with.
+manages sysctl settings
 
 ## Module Description
 
-If applicable, this section should have a brief description of the technology
-the module integrates with and what that integration enables. This section
-should answer the questions: "What does this module *do*?" and "Why would I use
-it?"
-
-If your module has a range of functionality (installation, configuration,
-management, etc.) this is the time to mention it.
+manages sysctl permanent and temporal settings, does **NOT** use **sysctl.d**.
 
 ## Setup
 
 ### What sysctl affects
 
-* A list of files, packages, services, or operations that the module will alter,
-  impact, or execute on the system it's installed on.
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form.
+* /etc/sysctl.conf
 
-### Setup Requirements **OPTIONAL**
+### Setup Requirements
 
-If your module requires anything extra before setting up (pluginsync enabled,
-etc.), mention it here.
+This module requires pluginsync enabled
 
 ### Beginning with sysctl
 
-The very basic steps needed for a user to get the module up and running.
-
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you may wish to include an additional section here: Upgrading
-(For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
+```puppet
+sysctl::set { 'vm.dirty_expire_centisecs':
+  value => '500',
+}
+```
 
 ## Usage
+
+Temporal settings (will not be present on /etc/sysctl.conf):
 
 ```puppet
 class { 'sysctl': }
@@ -68,6 +58,7 @@ multi value usage:
 
 ```puppet
 #kernel.sem=250 32000 100 128
+
 sysctl::set { 'kernel.sem':
   value => "250\t32000\t100\t128",
 }
@@ -76,14 +67,62 @@ sysctl::set { 'kernel.sem':
 
 ## Reference
 
-Here, list the classes, types, providers, facts, etc contained in your module.
-This section should include all of the under-the-hood workings of your module so
-people know what the module is touching on their system but don't need to mess
-with things. (We are working on automating this section!)
+### classes
+
+#### sysctl
+
+* **manage_service**: determines whether Puppet manages sysctl reloads (default: true)
+* **manage_docker_service**: sysctl reload will fail in a docker container, setting this to false will not refresh changes (default: false)
+* **disable_ipv6**: add the following sysctl settings to disable IPv6:
+  * **net.ipv6.conf.all.disable_ipv6** = 1
+  * **net.ipv6.conf.all.accept_redirects** = 0
+  * **net.ipv6.conf.default.accept_redirects** = 0
+* **disable_netfilter_on_bridges**: (default: true)
+  * **net.bridge.bridge-nf-call-ip6tables** = 0
+  * **net.bridge.bridge-nf-call-iptables** = 0
+  * **net.bridge.bridge-nf-call-arptables** = 0
+* **sysrq**: (default: false)
+* **core_uses_pid**: (default: true)
+* **ipv4_tcp_syncookies**: (default: true)
+* **netfilter_on_bridges**: (default: false)
+* **execshield**: (default: true)
+* **randomize_va_space**: (default: true)
+* **suid_dumpable**: (default: false)
+* **shmall**: (default: 4294967296)
+* **shmmax**: (default: 68719476736)
+* **msgmax**: (default: 65536)
+* **msgmnb**: (default: 65536)
+* **ipv4_ip_forward**: (default: false)
+* **ipv4_icmp_echo_ignore_broadcasts**: (default: true)
+* **ipv4_icmp_ignore_bogus_error_responses**: (default: true)
+* **ipv4_all_log_martians**: (default: true)
+* **ipv4_default_log_martians**: (default: true)
+* **ipv4_all_accept_source_route**: (default: false)
+* **ipv4_default_accept_source_route**: (default: false)
+* **ipv4_all_rp_filter**: (default: true)
+* **ipv4_default_rp_filter**: (default: true)
+* **ipv4_all_accept_redirects**: (default: false)
+* **ipv4_default_accept_redirects**: (default: false)
+* **ipv4_all_secure_redirects**: (default: false)
+* **ipv4_default_secure_redirects**: (default: false)
+* **ipv4_all_send_redirects**: (default: false)
+* **ipv4_default_send_redirects**: (default: false)
+
+### defines
+
+#### sysctl::set
+
+* **setting**: (default: name)
+* **value**:
+* **permanent**: (default: true)
 
 ## Limitations
 
-This is where you list OS compatibility, version compatibility, etc.
+Tested on:
+* CentOS 5
+* CentOS 6
+* CentOS 7
+* Ubuntu 14.04
 
 ## Development
 
