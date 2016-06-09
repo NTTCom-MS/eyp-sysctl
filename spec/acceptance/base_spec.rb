@@ -11,6 +11,11 @@ describe 'sysctl class' do
       class { 'sysctl':
       }
 
+      sysctl::set { 'vm.swappiness':
+        value => '69',
+        permanent => true,
+      }
+
       EOF
 
       # Run it twice and test for idempotency
@@ -21,6 +26,7 @@ describe 'sysctl class' do
     describe file('/etc/sysctl.conf') do
       it { should be_file }
       its(:content) { should match 'puppet managed file' }
+      its(:content) { should match 'vm.swappiness=69' }
     end
 
   end

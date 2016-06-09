@@ -6,9 +6,35 @@
 # 99: custom settings
 #
 class sysctl(
-              $manage_service        = true,
-              $manage_docker_service = false,
-              $disable_ipv6          = true,
+              $manage_service                         = true,
+              $manage_docker_service                  = false,
+              $disable_ipv6                           = true,
+              $sysrq                                  = false,
+              $core_uses_pid                          = true,
+              $ipv4_tcp_syncookies                    = true,
+              $disable_netfilter_on_bridges           = true,
+              $execshield                             = true,
+              $randomize_va_space                     = true,
+              $suid_dumpable                          = false,
+              $shmall                                 = '4294967296',
+              $shmmax                                 = '68719476736',
+              $msgmax                                 = '65536',
+              $msgmnb                                 = '65536',
+              $ipv4_ip_forward                        = false,
+              $ipv4_icmp_echo_ignore_broadcasts       = true,
+              $ipv4_icmp_ignore_bogus_error_responses = true,
+              $ipv4_all_log_martians                  = true,
+              $ipv4_default_log_martians              = true,
+              $ipv4_all_accept_source_route           = false,
+              $ipv4_default_accept_source_route       = false,
+              $ipv4_all_rp_filter                     = true,
+              $ipv4_default_rp_filter                 = true,
+              $ipv4_all_accept_redirects              = false,
+              $ipv4_default_accept_redirects          = false,
+              $ipv4_all_secure_redirects              = false,
+              $ipv4_default_secure_redirects          = false,
+              $ipv4_all_send_redirects                = false,
+              $ipv4_default_send_redirects            = false,
             ) inherits sysctl::params {
 
   Exec{
