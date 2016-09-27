@@ -131,6 +131,8 @@ have some test to check both presence and absence of any feature
 
 ### TODO
 
+* ignore errors:  *-e Use this option to ignore errors about unknown keys.*
+
 * Support for:
   * CentOS 5
   * CentOS 7
