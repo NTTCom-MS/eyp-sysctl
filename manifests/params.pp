@@ -8,11 +8,11 @@ class sysctl::params {
       {
         /^[5-6].*$/:
         {
-          $sysctlreload='sysctl -p'
+          $sysctlreload='sysctl -e -p'
         }
         /^7.*$/:
         {
-          $sysctlreload='sysctl --system'
+          $sysctlreload='sysctl -e --system'
         }
         default: { fail("Unsupported RHEL/CentOS version! - ${::operatingsystemrelease}")  }
       }
@@ -27,7 +27,7 @@ class sysctl::params {
         {
           /^14.*$/:
           {
-            $sysctlreload='sysctl --system'
+            $sysctlreload='sysctl -e --system'
           }
           default: { fail("Unsupported Ubuntu version! - ${::operatingsystemrelease}")  }
         }
