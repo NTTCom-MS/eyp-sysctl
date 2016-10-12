@@ -2,8 +2,8 @@
 #
 # concat order:
 # 00: base
-# 98: custom settings banner
-# 99: custom settings
+# 58: custom settings banner
+# 59: custom settings
 #
 class sysctl(
               $manage_service                         = true,

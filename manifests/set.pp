@@ -2,11 +2,14 @@ define sysctl::set(
                     $value,
                     $setting   = $name,
                     $permanent = true,
+                    $order     = '59'
                   ) {
 
   Exec{
     path => '/usr/sbin:/usr/bin:/sbin:/bin',
   }
+
+  validate_integer($order, 99, 59)
 
   include ::sysctl
 
@@ -17,14 +20,14 @@ define sysctl::set(
       concat::fragment{ 'sysctl settings banner':
         target  => '/etc/sysctl.conf',
         content => "\n\n# custom settings\n\n",
-        order   => '98',
+        order   => '58',
       }
     }
 
     concat::fragment{ "sysctl ${setting}":
       target  => '/etc/sysctl.conf',
       content => "${setting}=${value}\n",
-      order   => '99',
+      order   => '59',
     }
   }
 

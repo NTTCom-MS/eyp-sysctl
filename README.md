@@ -115,6 +115,7 @@ sysctl::set { 'kernel.sem':
 * **setting**: (default: name)
 * **value**:
 * **permanent**: if true, is added to /etc/sysctl.conf, otherwise it's set using sysctl -w (default: true)
+* **order**: minimum value: 59, maximum value: 99 (default: 59)
 
 ## Limitations
 
