@@ -27,7 +27,7 @@ define sysctl::set(
     concat::fragment{ "sysctl ${setting}":
       target  => '/etc/sysctl.conf',
       content => "${setting}=${value}\n",
-      order   => '59',
+      order   => $order,
     }
   }
 
