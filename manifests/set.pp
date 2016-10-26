@@ -24,7 +24,7 @@ define sysctl::set(
       }
     }
 
-    concat::fragment{ "sysctl ${setting}":
+    concat::fragment{ "sysctl ${setting} ${name}":
       target  => '/etc/sysctl.conf',
       content => "${setting}=${value}\n",
       order   => $order,
@@ -38,7 +38,7 @@ define sysctl::set(
   # [jprats@croscat ~]$ sudo sysctl -w vm.swappiness=60
   # vm.swappiness = 60
 
-  exec { "update sysctl ${setting} ${value}":
+  exec { "update sysctl ${setting} ${value} ${name}":
     command => "sysctl -w '${setting}=${value}'",
     unless  => "sysctl -n ${setting} | grep -P \"${value}\"",
     require => Concat['/etc/sysctl.conf'],
