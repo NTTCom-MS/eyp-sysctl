@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.16
+
+* dirty hack to be able to disable a given sysctl setting already configured 
+
 ## 0.2.15
 
 * changed **concat** and **exec** name to use **$name**
