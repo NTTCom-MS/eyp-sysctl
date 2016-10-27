@@ -45,6 +45,6 @@ define sysctl::set(
       command => "sysctl -w '${setting}=${value}'",
       unless  => "sysctl -n ${setting} | grep -P \"${value}\"",
       require => Concat['/etc/sysctl.conf'],
-    }    
+    }
   }
 }
