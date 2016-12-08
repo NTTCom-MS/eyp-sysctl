@@ -4,9 +4,9 @@
   "author": "eyp",
   "summary": "configure and manage sysctl",
   "license": "Apache-2.0",
-  "source": "",
+  "source": "https://github.com/NTTCom-MS/eyp-sysctl",
   "project_page": null,
-  "issues_url": null,
+  "issues_url": "https://github.com/NTTCom-MS/eyp-sysctl/issues",
   "dependencies": [
     {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0"},
     {"name":"puppetlabs/concat","version_requirement":">= 1.2.3"},
