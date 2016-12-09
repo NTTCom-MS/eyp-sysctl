@@ -62,6 +62,15 @@ sysctl::set { 'kernel.sem':
 }
 ```
 
+disable an an ready set value (useful in **hiera** setups)
+
+```hiera
+---
+sysctlset:
+  'net.ipv4.conf.eno4.rp_filter':
+    value: 2
+    enable: false
+```
 
 ## Reference
 
@@ -114,6 +123,7 @@ sysctl::set { 'kernel.sem':
 * **value**:
 * **permanent**: if true, is added to /etc/sysctl.conf, otherwise it's set using sysctl -w (default: true)
 * **order**: minimum value: 59, maximum value: 99 (default: 59)
+* **enable**: enable or disable this setting, **intended to be used in hiera based setups** to be able to remove a given setting in a higher level (default: true)
 
 ## Limitations
 
@@ -129,13 +139,6 @@ We are pushing to have acceptance testing in place, so any new feature should
 have some test to check both presence and absence of any feature
 
 ### TODO
-
-* ignore errors:  *-e Use this option to ignore errors about unknown keys.*
-
-* Support for:
-  * CentOS 5
-  * CentOS 7
-  * Ubuntu 14.04
 
 
 ### Contributing
