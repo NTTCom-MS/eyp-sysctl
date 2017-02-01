@@ -10,7 +10,7 @@ define sysctl::set(
     path => '/usr/sbin:/usr/bin:/sbin:/bin',
   }
 
-  validate_integer($order, 99, 59)
+  validate_integer($order, '99', '59')
 
   if($enable)
   {
