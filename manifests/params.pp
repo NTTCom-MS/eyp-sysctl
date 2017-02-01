@@ -25,7 +25,7 @@ class sysctl::params {
       {
         case $::operatingsystemrelease
         {
-          /^14.*$/:
+          /^1[46].*$/:
           {
             $sysctlreload='sysctl -e --system'
           }
