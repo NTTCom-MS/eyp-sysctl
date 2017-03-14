@@ -14,7 +14,7 @@ class sysctl(
               $ipv4_tcp_syncookies                    = true,
               $disable_netfilter_on_bridges           = true,
               $execshield                             = true,
-              $randomize_va_space                     = true,
+              $randomize_va_space                     = '1',
               $suid_dumpable                          = false,
               $shmall                                 = '4294967296',
               $shmmax                                 = '68719476736',
