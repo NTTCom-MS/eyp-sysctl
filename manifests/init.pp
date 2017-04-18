@@ -50,9 +50,9 @@ class sysctl(
   }
 
   concat::fragment{ 'base sysctl':
+    order   => '00',
     target  => '/etc/sysctl.conf',
     content => template("${module_name}/sysctlbase.erb"),
-    order   => '00',
   }
 
   class { 'sysctl::service':

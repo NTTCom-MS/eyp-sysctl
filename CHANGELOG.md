@@ -2,7 +2,7 @@
 
 ## 0.2.18
 
-* bugfix **sysctl::randomize_va_space** can be set to 0,1 and 2
+* bugfix **sysctl::randomize_va_space** can be set to 0, 1 and 2
 
 ## 0.2.16
 
