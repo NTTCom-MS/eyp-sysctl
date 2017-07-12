@@ -1,8 +1,16 @@
 # CHANGELOG
 
+## 0.2.19
+
+* changed default randomize_va_space to 2 for CentOS 6
+
+## 0.2.18
+
+* bugfix **sysctl::randomize_va_space** can be set to 0, 1 and 2
+
 ## 0.2.16
 
-* dirty hack to be able to disable a given sysctl setting already configured 
+* dirty hack to be able to disable a given sysctl setting already configured
 
 ## 0.2.15
 

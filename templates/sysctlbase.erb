@@ -29,7 +29,7 @@ kernel.shmall = <%= @shmall %>
 
 #kernel
 kernel.exec-shield = <%= scope.function_bool2num([@execshield]) %>
-kernel.randomize_va_space = <%= scope.function_bool2num([@randomize_va_space]) %>
+kernel.randomize_va_space = <%= @randomize_va_space %>
 
 # to defend against certain types of IPv4 protocol attacks
 net.ipv4.ip_forward = <%= scope.function_bool2num([@ipv4_ip_forward]) %>

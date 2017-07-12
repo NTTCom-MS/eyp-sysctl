@@ -14,7 +14,7 @@ class sysctl(
               $ipv4_tcp_syncookies                    = true,
               $disable_netfilter_on_bridges           = true,
               $execshield                             = true,
-              $randomize_va_space                     = true,
+              $randomize_va_space                     = $sysctl::params::randomize_va_space_default,
               $suid_dumpable                          = false,
               $shmall                                 = '4294967296',
               $shmmax                                 = '68719476736',
@@ -50,9 +50,9 @@ class sysctl(
   }
 
   concat::fragment{ 'base sysctl':
+    order   => '00',
     target  => '/etc/sysctl.conf',
     content => template("${module_name}/sysctlbase.erb"),
-    order   => '00',
   }
 
   class { 'sysctl::service':
