@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.19
+
+* changed default randomize_va_space to 2 for CentOS 6
+
 ## 0.2.18
 
 * bugfix **sysctl::randomize_va_space** can be set to 0, 1 and 2
