@@ -3,14 +3,14 @@
 #
 
 # Controls the System Request debugging functionality of the kernel
-kernel.sysrq = <%= scope.function_bool2num([@sysrq]) %>
+kernel.sysrq = <%= scope.function_bool2number([@sysrq]) %>
 
 # Controls whether core dumps will append the PID to the core filename.
 # Useful for debugging multi-threaded applications.
-kernel.core_uses_pid = <%= scope.function_bool2num([@core_uses_pid]) %>
+kernel.core_uses_pid = <%= scope.function_bool2number([@core_uses_pid]) %>
 
 # Controls the use of TCP syncookies
-net.ipv4.tcp_syncookies = <%= scope.function_bool2num([@ipv4_tcp_syncookies]) %>
+net.ipv4.tcp_syncookies = <%= scope.function_bool2number([@ipv4_tcp_syncookies]) %>
 
 <% if @disable_netfilter_on_bridges %>
 # Disable netfilter on bridges.
@@ -28,28 +28,28 @@ kernel.shmmax = <%= @shmmax %>
 kernel.shmall = <%= @shmall %>
 
 #kernel
-kernel.exec-shield = <%= scope.function_bool2num([@execshield]) %>
+kernel.exec-shield = <%= scope.function_bool2number([@execshield]) %>
 kernel.randomize_va_space = <%= @randomize_va_space %>
 
 # to defend against certain types of IPv4 protocol attacks
-net.ipv4.ip_forward = <%= scope.function_bool2num([@ipv4_ip_forward]) %>
-net.ipv4.icmp_echo_ignore_broadcasts = <%= scope.function_bool2num([@ipv4_icmp_echo_ignore_broadcasts]) %>
-net.ipv4.icmp_ignore_bogus_error_responses = <%= scope.function_bool2num([@ipv4_icmp_ignore_bogus_error_responses]) %>
-net.ipv4.conf.all.log_martians = <%= scope.function_bool2num([@ipv4_all_log_martians]) %>
-net.ipv4.conf.default.log_martians = <%= scope.function_bool2num([@ipv4_default_log_martians]) %>
-net.ipv4.conf.all.accept_source_route = <%= scope.function_bool2num([@ipv4_all_accept_source_route]) %>
-net.ipv4.conf.default.accept_source_route = <%= scope.function_bool2num([@ipv4_default_accept_source_route]) %>
-net.ipv4.conf.all.rp_filter = <%= scope.function_bool2num([@ipv4_all_rp_filter]) %>
-net.ipv4.conf.default.rp_filter = <%= scope.function_bool2num([@ipv4_default_rp_filter]) %>
-net.ipv4.conf.all.accept_redirects = <%= scope.function_bool2num([@ipv4_all_accept_redirects]) %>
-net.ipv4.conf.default.accept_redirects = <%= scope.function_bool2num([@ipv4_default_accept_redirects]) %>
-net.ipv4.conf.all.secure_redirects = <%= scope.function_bool2num([@ipv4_all_secure_redirects]) %>
-net.ipv4.conf.default.secure_redirects = <%= scope.function_bool2num([@ipv4_default_secure_redirects]) %>
-net.ipv4.conf.all.send_redirects = <%= scope.function_bool2num([@ipv4_all_send_redirects]) %>
-net.ipv4.conf.default.send_redirects = <%= scope.function_bool2num([@ipv4_default_send_redirects]) %>
+net.ipv4.ip_forward = <%= scope.function_bool2number([@ipv4_ip_forward]) %>
+net.ipv4.icmp_echo_ignore_broadcasts = <%= scope.function_bool2number([@ipv4_icmp_echo_ignore_broadcasts]) %>
+net.ipv4.icmp_ignore_bogus_error_responses = <%= scope.function_bool2number([@ipv4_icmp_ignore_bogus_error_responses]) %>
+net.ipv4.conf.all.log_martians = <%= scope.function_bool2number([@ipv4_all_log_martians]) %>
+net.ipv4.conf.default.log_martians = <%= scope.function_bool2number([@ipv4_default_log_martians]) %>
+net.ipv4.conf.all.accept_source_route = <%= scope.function_bool2number([@ipv4_all_accept_source_route]) %>
+net.ipv4.conf.default.accept_source_route = <%= scope.function_bool2number([@ipv4_default_accept_source_route]) %>
+net.ipv4.conf.all.rp_filter = <%= @ipv4_all_rp_filter %>
+net.ipv4.conf.default.rp_filter = <%= @ipv4_default_rp_filter %>
+net.ipv4.conf.all.accept_redirects = <%= scope.function_bool2number([@ipv4_all_accept_redirects]) %>
+net.ipv4.conf.default.accept_redirects = <%= scope.function_bool2number([@ipv4_default_accept_redirects]) %>
+net.ipv4.conf.all.secure_redirects = <%= scope.function_bool2number([@ipv4_all_secure_redirects]) %>
+net.ipv4.conf.default.secure_redirects = <%= scope.function_bool2number([@ipv4_default_secure_redirects]) %>
+net.ipv4.conf.all.send_redirects = <%= scope.function_bool2number([@ipv4_all_send_redirects]) %>
+net.ipv4.conf.default.send_redirects = <%= scope.function_bool2number([@ipv4_default_send_redirects]) %>
 
 # Restrict core dumps
-fs.suid_dumpable = <%= scope.function_bool2num([@suid_dumpable]) %>
+fs.suid_dumpable = <%= scope.function_bool2number([@suid_dumpable]) %>
 
 <% if @disable_ipv6 -%>
 
