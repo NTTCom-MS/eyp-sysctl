@@ -13,7 +13,7 @@ class sysctl(
               $core_uses_pid                          = true,
               $ipv4_tcp_syncookies                    = true,
               $disable_netfilter_on_bridges           = true,
-              $execshield                             = true,
+              $execshield                             = $sysctl::params::execshield_default,
               $randomize_va_space                     = $sysctl::params::randomize_va_space_default,
               $suid_dumpable                          = false,
               $shmall                                 = '4294967296',
