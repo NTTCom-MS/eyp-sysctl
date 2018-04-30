@@ -2,7 +2,7 @@
 
 ## 0.3.1
 
-* added support for Ubuntu 18.04
+* added support for **Ubuntu 18.04**
 * execshield is no longer an option in sysctl for kernel tuning, starting RHEL7
 * disable bridge netfilter options when br_bridge is not loaded
 
