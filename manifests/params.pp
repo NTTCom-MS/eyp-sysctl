@@ -27,7 +27,7 @@ class sysctl::params {
       {
         case $::operatingsystemrelease
         {
-          /^1[46].*$/:
+          /^1[468].*$/:
           {
             $sysctlreload='sysctl -e --system'
             $randomize_va_space_default='1'

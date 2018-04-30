@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.3.1
+
+* added support for Ubuntu 18.04
+
 ## 0.3.0
 
 * changed bool2num to use eyp-lib's **bool2number**
