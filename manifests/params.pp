@@ -8,11 +8,13 @@ class sysctl::params {
       {
         /^[5-6].*$/:
         {
+          $execshield_default=true
           $sysctlreload='sysctl -e -p'
           $randomize_va_space_default='2'
         }
         /^7.*$/:
         {
+          $execshield_default=undef
           $sysctlreload='sysctl -e --system'
           $randomize_va_space_default='1'
         }
@@ -27,8 +29,9 @@ class sysctl::params {
       {
         case $::operatingsystemrelease
         {
-          /^1[46].*$/:
+          /^1[468].*$/:
           {
+            $execshield_default=undef
             $sysctlreload='sysctl -e --system'
             $randomize_va_space_default='1'
           }

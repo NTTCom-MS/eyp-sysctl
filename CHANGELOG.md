@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## 0.3.1
+
+* added support for Ubuntu 18.04
+* execshield is no longer an option in sysctl for kernel tuning, starting RHEL7
+* disable bridge netfilter options when br_bridge is not loaded
+
+## 0.3.0
+
+* changed bool2num to use eyp-lib's **bool2number**
+* **INCOMPATIBLE CHANGE**: changed **ipv4_all_rp_filter** and **ipv4_default_rp_filter** from bool to int
+
 ## 0.2.19
 
 * changed default randomize_va_space to 2 for CentOS 6
