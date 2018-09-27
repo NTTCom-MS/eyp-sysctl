@@ -42,6 +42,26 @@ class sysctl::params {
       default: { fail('Unsupported Debian flavour!')  }
       }
     }
+    'Suse':
+    {
+      case $::operatingsystem
+      {
+        'SLES':
+        {
+          case $::operatingsystemrelease
+          {
+            '12.3':
+            {
+              $execshield_default=undef
+              $sysctlreload='sysctl -e --system'
+              $randomize_va_space_default='2'
+            }
+            default: { fail("Unsupported operating system ${::operatingsystem} ${::operatingsystemrelease}") }
+          }
+        }
+        default: { fail("Unsupported operating system ${::operatingsystem}") }
+      }
+    }
     default: { fail('Unsupported OS!')  }
   }
 }
