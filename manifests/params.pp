@@ -50,6 +50,12 @@ class sysctl::params {
         {
           case $::operatingsystemrelease
           {
+            '11.3':
+            {
+              $execshield_default=undef
+              $sysctlreload='sysctl -e -p'
+              $randomize_va_space_default='1'
+            }
             '12.3':
             {
               $execshield_default=undef
