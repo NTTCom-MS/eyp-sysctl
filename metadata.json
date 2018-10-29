@@ -1,6 +1,6 @@
 {
   "name": "eyp-sysctl",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "author": "eyp",
   "summary": "configure and manage sysctl",
   "license": "Apache-2.0",
@@ -35,7 +35,7 @@
     },
     {
       "operatingsystem": "SLES",
-      "operatingsystemrelease": [ "12.3" ]
+      "operatingsystemrelease": [ "11.3", "12.3" ]
     }
   ],
   "requirements": [
