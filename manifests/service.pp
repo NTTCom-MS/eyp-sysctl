@@ -13,7 +13,6 @@ class sysctl::service (
     if(defined('$::eyp_docker_iscontainer'))
     {
       if(getvar('::eyp_docker_iscontainer')==false or
-          getvar('::eyp_docker_iscontainer') =~ /false/ or
           $manage_docker_service)
       {
         exec {'apply sysctl':
