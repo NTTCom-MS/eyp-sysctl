@@ -56,7 +56,7 @@ class sysctl(
       order   => '00',
       target  => '/etc/sysctl.conf',
       content => template("${module_name}/sysctlbase.erb"),
-    }  
+    }
   }
 
   class { 'sysctl::service':
