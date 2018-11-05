@@ -6,6 +6,7 @@
 # 59: custom settings
 #
 class sysctl(
+              $manage_config_file                     = true,
               $manage_service                         = true,
               $manage_docker_service                  = false,
               $disable_ipv6                           = true,
@@ -41,18 +42,21 @@ class sysctl(
     path => '/usr/sbin:/usr/bin:/sbin:/bin',
   }
 
-  concat { '/etc/sysctl.conf':
-    ensure => 'present',
-    owner  => 'root',
-    group  => 'root',
-    mode   => '0644',
-    notify => Class['sysctl::service'],
-  }
+  if($manage_config_file)
+  {
+    concat { '/etc/sysctl.conf':
+      ensure => 'present',
+      owner  => 'root',
+      group  => 'root',
+      mode   => '0644',
+      notify => Class['sysctl::service'],
+    }
 
-  concat::fragment{ 'base sysctl':
-    order   => '00',
-    target  => '/etc/sysctl.conf',
-    content => template("${module_name}/sysctlbase.erb"),
+    concat::fragment{ 'base sysctl':
+      order   => '00',
+      target  => '/etc/sysctl.conf',
+      content => template("${module_name}/sysctlbase.erb"),
+    }  
   }
 
   class { 'sysctl::service':
