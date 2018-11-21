@@ -17,7 +17,6 @@ class sysctl::service (
       {
         exec {'apply sysctl':
           command     => $sysctl::params::sysctlreload,
-          require     => Concat['/etc/sysctl.conf'],
           refreshonly => true,
         }
       }
@@ -26,7 +25,6 @@ class sysctl::service (
     {
       exec {'apply sysctl':
         command     => $sysctl::params::sysctlreload,
-        require     => Concat['/etc/sysctl.conf'],
         refreshonly => true,
       }
     }
