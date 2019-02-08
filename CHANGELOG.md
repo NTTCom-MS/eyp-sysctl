@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.3.5
+
+* added support for SLES 11.4
+
 ## 0.3.4
 
 * added **manage_config_file** flag
