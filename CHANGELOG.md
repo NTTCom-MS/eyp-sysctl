@@ -5,6 +5,8 @@
 * added **IPv6** settings:
  - ipv6_all_accept_redirects
  - ipv6_default_accept_redirects
+ - ipv6_conf_all_accept_ra
+ - ipv6_conf_default_accept_ra
 
 ## 0.3.5
 

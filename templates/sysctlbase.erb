@@ -55,7 +55,12 @@ net.ipv4.conf.default.send_redirects = <%= scope.function_bool2number([@ipv4_def
 # ipv6
 net.ipv6.conf.all.accept_redirects = <%= scope.function_bool2number([@ipv6_all_accept_redirects]) %>
 net.ipv6.conf.default.accept_redirects = <%= scope.function_bool2number([@ipv6_default_accept_redirects]) %>
-
+<% if defined?(@ipv6_conf_all_accept_ra) -%>
+net.ipv6.conf.all.accept_ra = <%= @ipv6_conf_all_accept_ra %>
+<% end -%>
+<% if defined?(@ipv6_conf_default_accept_ra) -%>
+net.ipv6.conf.default.accept_ra = <%= @ipv6_conf_default_accept_ra %>
+<% end -%>
 # Restrict core dumps
 fs.suid_dumpable = <%= scope.function_bool2number([@suid_dumpable]) %>
 
