@@ -36,6 +36,10 @@ class sysctl(
               $ipv4_default_secure_redirects          = false,
               $ipv4_all_send_redirects                = false,
               $ipv4_default_send_redirects            = false,
+              $ipv6_all_accept_redirects              = false,
+              $ipv6_default_accept_redirects          = false,
+              $ipv6_conf_all_accept_ra                = undef,
+              $ipv6_conf_default_accept_ra            = undef,
             ) inherits sysctl::params {
 
   Exec{
