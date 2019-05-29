@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.3.6
+
+* added **IPv6** settings:
+ - ipv6_all_accept_redirects
+ - ipv6_default_accept_redirects
+
 ## 0.3.5
 
 * added support for SLES 11.4
