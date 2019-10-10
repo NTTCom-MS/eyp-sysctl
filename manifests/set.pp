@@ -2,15 +2,13 @@ define sysctl::set(
                     $value,
                     $setting   = $name,
                     $permanent = true,
-                    $order     = '59',
+                    $order     = '42',
                     $enable    = true,
                   ) {
 
   Exec{
     path => '/usr/sbin:/usr/bin:/sbin:/bin',
   }
-
-  validate_integer($order, 99, 59)
 
   if($enable)
   {
@@ -30,7 +28,7 @@ define sysctl::set(
       concat::fragment{ "sysctl ${setting} ${name}":
         target  => '/etc/sysctl.conf',
         content => "${setting}=${value}\n",
-        order   => $order,
+        order   => "59-${order}",
       }
     }
 

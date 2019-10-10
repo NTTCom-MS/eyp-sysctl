@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.3.7
+
+* added support for **RHEL 8**
+
 ## 0.3.6
 
 * added **IPv6** settings:
@@ -10,7 +14,7 @@
 
 ## 0.3.5
 
-* added support for SLES 11.4
+* added support for **SLES 11.4**
 
 ## 0.3.4
 
@@ -18,11 +22,11 @@
 
 ## 0.3.3
 
-* added support for SLES 11.3
+* added support for **SLES 11.3**
 
 ## 0.3.2
 
-* added support for SLES 12.3
+* added support for **SLES 12.3**
 
 ## 0.3.1
 

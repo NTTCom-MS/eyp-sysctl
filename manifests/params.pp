@@ -12,7 +12,7 @@ class sysctl::params {
           $sysctlreload='sysctl -e -p'
           $randomize_va_space_default='2'
         }
-        /^7.*$/:
+        /^[7-8].*$/:
         {
           $execshield_default=undef
           $sysctlreload='sysctl -e --system'
