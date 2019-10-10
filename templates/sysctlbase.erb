@@ -13,14 +13,12 @@ kernel.core_uses_pid = <%= scope.function_bool2number([@core_uses_pid]) %>
 net.ipv4.tcp_syncookies = <%= scope.function_bool2number([@ipv4_tcp_syncookies]) %>
 
 <% if @disable_netfilter_on_bridges %>
-  <%- if defined?(scope.lookupvar('::eyp_sysctl_net_bridge')) -%>
   <%- if scope.lookupvar('::eyp_sysctl_net_bridge')=="true" -%>
 # Disable netfilter on bridges.
 net.bridge.bridge-nf-call-ip6tables = 0
 net.bridge.bridge-nf-call-iptables = 0
 net.bridge.bridge-nf-call-arptables = 0
 
-  <%- end -%>
   <%- end -%>
 <% end -%>
 # Controls the default maxmimum size of a mesage queue
