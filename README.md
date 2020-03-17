@@ -140,6 +140,22 @@ have some test to check both presence and absence of any feature
 
 ### TODO
 
+* Cleanup warning:
+  ```
+  [root@ip-172-31-20-15 puppet-masterless]# ./localpuppetmaster.sh -d /tmp/puppet -r https://github.com/jordiprats/eyp-sysctl -s /tmp/puppet/modules/sysctl/examples/demo.pp
+
+  Checking Puppetfile syntax:
+  Syntax OK
+  Cleanup sysctl module
+  Notice: Preparing to uninstall 'eyp-sysctl' ...
+  Removed 'eyp-sysctl' (v0.3.7) from /tmp/puppet/modules
+  Installing puppet module using a Puppetfile
+  Installing dependencies
+  Dependencies installed
+  Warning: Undefined variable '::eyp_sysctl_net_bridge'; \n   (file & line not available)
+  Notice: Compiled catalog for ip-172-31-20-15.eu-west-1.compute.internal in environment production in 0.12 seconds
+  Notice: Applied catalog in 0.04 seconds
+  ```
 
 ### Contributing
 
