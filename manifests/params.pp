@@ -29,7 +29,7 @@ class sysctl::params {
       {
         case $::operatingsystemrelease
         {
-          /^1[468].*$/:
+          /^(1[468]|20).*$/:
           {
             $execshield_default=undef
             $sysctlreload='sysctl -e --system'
