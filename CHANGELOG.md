@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.3.8
+
+* added interface settings for rp_filter, arp_ignore, arp_announce (**IPv4** only)
+
 ## 0.3.7
 
 * added support for **RHEL 8**
