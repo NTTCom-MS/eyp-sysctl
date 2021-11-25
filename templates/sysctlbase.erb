@@ -8,6 +8,7 @@ kernel.sysrq = <%= scope.function_bool2number([@sysrq]) %>
 # Controls whether core dumps will append the PID to the core filename.
 # Useful for debugging multi-threaded applications.
 kernel.core_uses_pid = <%= scope.function_bool2number([@core_uses_pid]) %>
+kernel.core_pattern = <%= scope.function_bool2number([@pattern]) %>
 
 # Controls the use of TCP syncookies
 net.ipv4.tcp_syncookies = <%= scope.function_bool2number([@ipv4_tcp_syncookies]) %>

@@ -70,4 +70,14 @@ class sysctl(
 
   Class['::sysctl']
 
+  class sysctl::entry::core_pattern(
+             $pattern                                 =true,
+  ) {
+
+    sysctl::entry { 'kernel-core-pattern':
+      entries => {
+        'kernel.core_pattern' => $pattern,
+      }
+    }
+  }
 }
