@@ -62,7 +62,7 @@ sysctl::set { 'kernel.sem':
 }
 ```
 
-disable an an ready set value (useful in **hiera** setups)
+disable an already set value (useful in **hiera** setups)
 
 ```hiera
 ---
