@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.3.9
+
+* added ifname variable to concat fragment in interface manifest
+
 ## 0.3.8
 
 * added interface settings for rp_filter, arp_ignore, arp_announce (**IPv4** only)
