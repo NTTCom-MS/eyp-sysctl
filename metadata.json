@@ -1,6 +1,6 @@
 {
   "name": "eyp-sysctl",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "author": "eyp",
   "summary": "configure and manage sysctl",
   "license": "Apache-2.0",
