@@ -68,6 +68,4 @@ class sysctl(
     manage_docker_service => $manage_docker_service,
   }
 
-  Class['::sysctl']
-
 }
