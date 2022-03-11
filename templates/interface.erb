@@ -1,3 +1,3 @@
-<%- if defined?(@rp_filter) -%> net.ipv4.conf.<%= @ifname %>.rp_filter=<%= @rp_filter %> <% end -%>
-<%- if defined?(@arp_ignore) -%> net.ipv4.conf.<%= @ifname %>.arp_ignore=<%= @arp_ignore %> <% end -%>
-<%- if defined?(@arp_announce) -%> net.ipv4.conf.<%= @ifname %>.arp_announce=<%= @arp_announce %> <% end -%>
+<%- if defined?(@rp_filter) -%>net.ipv4.conf.<%= @ifname %>.rp_filter=<%= @rp_filter %> <% end %>
+<%- if defined?(@arp_ignore) -%>net.ipv4.conf.<%= @ifname %>.arp_ignore=<%= @arp_ignore %> <% end %>
+<%- if defined?(@arp_announce) -%>net.ipv4.conf.<%= @ifname %>.arp_announce=<%= @arp_announce %> <% end %>
